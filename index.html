@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>▼ByteVanilla▲</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #050505; color: #d1d5db; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(12, 12, 12, 0.95); border: 1px solid #1f2937; }
+        .page { display: none; }
+        .active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        h2 { color: #3b82f6; font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem; }
+        p { margin-bottom: 0.5rem; border-bottom: 1px solid #111; padding-bottom: 0.25rem; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <nav class="max-w-5xl mx-auto mb-10 flex gap-4 bg-zinc-900 p-2 rounded-2xl border border-zinc-800">
+        <button onclick="showPage('home')" class="flex-1 py-3 rounded-xl hover:bg-zinc-800 transition font-bold">ГЛАВНАЯ</button>
+        <button onclick="showPage('rules')" class="flex-1 py-3 rounded-xl hover:bg-zinc-800 transition font-bold">СВОД ПРАВИЛ</button>
+    </nav>
+
+    <main id="home" class="page active max-w-5xl mx-auto glass p-12 rounded-3xl text-center">
+        <h1 class="text-7xl font-black text-white mb-6">BYTEVANILLA</h1>
+        <p class="text-xl text-zinc-400 mb-10">Добро пожаловать на сайт ByteVanilla.</p>
+        <div onclick="copyIp()" class="cursor-pointer bg-zinc-900 p-8 rounded-2xl hover:bg-blue-950 transition border border-zinc-700">
+            <span class="text-sm text-zinc-500 uppercase tracking-widest">Нажми, чтобы скопировать IP (Это playit, поэтому такая ссылка.)</span>
+            <div class="text-4xl font-mono text-blue-400 mt-2">marketing-pointed.gl.joinmc.link</div>
+        </div>
+    </main>
+
+    <main id="rules" class="page max-w-5xl mx-auto glass p-10 rounded-3xl">
+        <h1 class="text-4xl font-bold text-white mb-10 text-center">ПОЛНЫЙ СВОД ЗАКОНОВ</h1>
+        
+        <div class="grid md:grid-cols-2 gap-10">
+            <div>
+                <h2>1. Игровой процесс</h2>
+                <p>1.1 Запрещены любые читы (X-Ray, Fly, KillAura).</p>
+                <p>1.2 Запрещены баги, дюпы и сторонние эксплойты.</p>
+                <p>1.3 Гриферство построек строго запрещено.</p>
+                <p>1.4 Воровство из чужих сундуков карается баном.</p>
+                <p>1.5 Запрещено создавать лаговые машины.</p>
+                <p>1.6 Запрещено мешать игрокам (сталкивание в лаву).</p>
+                <p>1.7 Запрещена постройка столбов 1х1.</p>
+                <p>1.8 Запрещено PvP в режиме AFK.</p>
+                <p>1.9 Запрещен обход лимитов через твинки.</p>
+                <p>1.10 Запрещено намеренное создание лагов.</p>
+            </div>
+            <div>
+                <h2>2. Общение и чат</h2>
+                <p>2.1 Запрещены прямые и косвенные оскорбления.</p>
+                <p>2.2 Запрещена дискриминация по любому признаку.</p>
+                <p>2.3 Запрещен флуд, капс и спам сообщениями.</p>
+                <p>2.4 Запрещена реклама других серверов.</p>
+                <p>2.5 Запрещено выпрашивание ресурсов/админки.</p>
+                <p>2.6 Запрещен деанон (доксинг) игроков.</p>
+                <p>2.7 Запрещены провокации и троллинг.</p>
+                <p>2.8 Запрещен обман при обменах.</p>
+                <p>2.9 Запрещено выдавать себя за Staff.</p>
+                <p>2.10 Уважительное отношение к Staff.</p>
+            </div>
+            <div>
+                <h2>3. Территории и Приват</h2>
+                <p>3.1 Ответственность за ресурсы в привате несешь ты.</p>
+                <p>3.2 Запрещено "осаждать" чужие регионы.</p>
+                <p>3.3 Запрещены приваты-пустышки (без базы).</p>
+                <p>3.4 Запрещено занимать спавн-зоны.</p>
+                <p>3.5 Запрещено строить у чужих приватов.</p>
+                <p>3.6 Приват чужого имущества карается баном.</p>
+                <p>3.7 Запрещена передача привата ради обмана.</p>
+                <p>3.8 Запрещено строить внутри чужого региона.</p>
+                <p>3.9 Запрещено создавать ловушки в привате.</p>
+                <p>3.10 Запрещено портить ландшафт в радиусе 100б.</p>
+            </div>
+          <div>
+                <h2>4. Технический регламент</h2>
+                <p>4.1 Запрещено намеренное создание нагрузки на сервер.</p>
+                <p>4.2 Запрещено использование VPN для обхода банов.</p>
+                <p>4.3 Запрещено распространение вредоносного ПО.</p>
+                <p>4.4 Запрещен взлом или попытка доступа к аккаунтам.</p>
+                <p>4.5 Запрещено использование автокликеров на спавне.</p>
+                <p>4.6 Запрещено создание ферм с избытком мобов.</p>
+                <p>4.7 Запрещено использование макросов для игры.</p>
+                <p>4.8 Запрещено скрывать баги от администрации.</p>
+                <p>4.9 Запрещено создавать «черные» списки игроков.</p>
+                <p>4.10 Вы будете забанены навсегда по IP за краш сервера.</p>
+            </div>
+
+            <div>
+                <h2>5. Администрация</h2>
+                <p>5.1 Администрация всегда права (по умолчанию).</p>
+                <p>5.2 Незнание правил не освобождает от бана.</p>
+                <p>5.3 Администрация вправе изменять правила в любой момент.</p>
+                <p>5.4 Споры с администрацией караются мутом.</p>
+                <p>5.5 Жалобы подаются только с доказательствами.</p>
+                <p>5.6 Администрация не обязана возвращать ресурсы.</p>
+                <p>5.7 Решения администрации окончательны.</p>
+                <p>5.8 Запрещено угрожать администрации снятием.</p>
+                <p>5.9 Сотрудничество с читерами — это соучастие.</p>
+                <p>5.10 Срок бана определяет администратор.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center pt-8 border-t border-zinc-800">
+            <button onclick="document.getElementById('modal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 px-10 py-4 rounded-xl font-black text-lg transition">ПРАВИЛА ИСПОЛЬЗОВАНИЯ ПО</button>
+        </div>
+    </main>
+
+    <div id="modal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center p-4">
+        <div class="glass p-10 rounded-3xl max-w-lg w-full">
+            <h3 class="text-2xl font-bold mb-6 text-red-500">Классификация ПО</h3>
+            <div class="space-y-4">
+                <p class="text-green-400">✅ Разрешено: OptiFine, Sodium, Lunar, VoiceChat, LabyMod.</p>
+                <p class="text-yellow-400">⚠️ Можно хранить, нельзя юзать: Schematica, WorldDownloader.</p>
+                <p class="text-red-500">🚫 Запрещено (бан): X-Ray, KillAura, Radar, AutoClicker, Баритон, Reach.</p>
+            </div>
+            <button onclick="document.getElementById('modal').classList.add('hidden')" class="mt-8 w-full py-4 bg-zinc-800 rounded-xl font-bold">ЗАКРЫТЬ</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+        function copyIp() {
+            navigator.clipboard.writeText('play.bytevanilla.ru');
+            alert('IP скопирован!');
+        }
+    </script>
+</body>
+</html>
